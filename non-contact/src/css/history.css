@@ -1,0 +1,159 @@
+/* —— History —— */
+
+.Page--history {
+  align-items: stretch;
+  height: 100vh;
+  min-height: 100vh;
+  padding-top: 12px;
+  padding-bottom: 0;
+}
+
+.HistoryTopBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-bottom: 8px;
+  flex-shrink: 0;
+}
+
+.HistoryTitle {
+  flex: 1;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #f5f5f5;
+}
+
+.HistoryTopBar-spacer {
+  width: 64px;
+  height: 40px;
+}
+
+.HistoryClear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 64px;
+  height: 40px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.HistoryClear-label {
+  font-size: 13px;
+  color: #f87171;
+}
+
+.HistoryList {
+  width: 100%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0px;
+  min-height: 0;
+}
+
+.HistoryEmpty {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+.HistoryEmpty-text {
+  font-size: 15px;
+  color: #9aa0ac;
+  text-align: center;
+}
+
+.HistoryRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding-left: 16px;
+  padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+
+.HistoryRow-main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.HistoryRow-flagFallback {
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  background-color: #3a3f4b;
+}
+
+.HistoryRow-meta {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.HistoryRow-number {
+  font-size: 16px;
+  color: #f5f5f5;
+}
+
+.HistoryRow-sub {
+  font-size: 12px;
+  color: #9aa0ac;
+  margin-top: 2px;
+}
+
+.HistoryRow-delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+
+.HistoryTitle--light {
+  color: #111827;
+}
+
+.HistoryClear-label--light {
+  color: #dc2626;
+}
+
+.HistoryEmpty-text--light {
+  color: #6b7280;
+}
+
+.HistoryRow--light {
+  border-bottom-color: rgba(15, 23, 42, 0.06);
+}
+
+.HistoryRow-flagFallback--light {
+  background-color: #d1d5db;
+}
+
+.HistoryRow-number--light {
+  color: #111827;
+}
+
+.HistoryRow-sub--light {
+  color: #6b7280;
+}

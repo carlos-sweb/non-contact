@@ -1,0 +1,20 @@
+text {
+  font-family: "JetBrains Mono", sans-serif;
+  color:#f5f5f5;
+}
+
+:root {
+  background-color: #0f1115;
+}
+
+/* Entrance animation — only applied via .Page--enter on first mount of a
+   screen (see dialer/countries oncreate). Keeping it off .Page avoids a
+   re-fade on every theme toggle / search redraw / class patch. */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

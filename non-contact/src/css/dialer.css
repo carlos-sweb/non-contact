@@ -1,0 +1,313 @@
+/* Dark is the CSS default; "--light" modifiers below are appended by
+   withTheme() in src/index.ts (same pattern as indicadores-app). */
+
+.Page {
+  padding-top: 16px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #0c0e12;
+}
+
+.Page--enter {
+  opacity: 0;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.Page--dialer {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+
+/* —— Dialer chrome —— */
+
+.DialerHeader {  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap:10px;  
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-bottom: 4px;
+  flex-shrink: 0;
+}
+
+.HeaderButton__space{
+  display: flex;        
+  flex-shrink: 0;
+  flex:1;
+}
+.HeaderButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  flex-shrink: 0;  
+  
+}
+
+
+
+.DialerHero {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 28px;
+  min-height: 0;
+}
+
+.CountryChip {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-left: 14px;
+  padding-right: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  margin-bottom: 20px;
+}
+
+.CountryChip-code {
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: #f2f3f5;
+}
+
+.NumberStage {
+  width: 100%;
+  min-height: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+}
+
+.number_row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  
+}
+.number_row >text{  
+  display:flex;
+  flex:1;
+  text-align:right;
+}
+
+.TextNumber {
+  letter-spacing: 3px;
+  font-size: 40px;
+  color: #f2f3f5;
+  text-align: center;
+}
+
+.NumberHint {
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #5c6578;
+  text-align: center;
+}
+
+.NumberHint--error {
+  color: #f87171;
+}
+
+.DigitCount {
+  margin-top: 10px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #5c6578;
+  text-align: center;
+}
+
+.DigitCount--ready {
+  color: #3dd68c;
+}
+
+.btn_x {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  flex-shrink: 0;
+  opacity: 0;
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+/* —— Keypad —— */
+
+.kn {
+  background-color: #141820;
+  width: 100%;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 14px;
+  padding-bottom: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+  gap: 10px;
+  flex-shrink: 0;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+}
+
+.kn_row {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  height: 25%;
+  gap: 10px;
+}
+
+.kn_key {
+  display: flex;
+  flex: 1;
+  background-color: #222833;
+  border-radius: 18px;
+  align-items: center;
+  justify-content: center;
+}
+
+.kn_key--ghost {
+  background-color: transparent;
+}
+
+.kn_key--confirm {
+  background-color: #1f9a55;
+}
+
+.kn_key--confirmOff {
+  background-color: #2a303c;
+}
+
+.kn_digit {
+  font-size: 30px;
+  color: #f2f3f5;
+}
+
+.VersionLabel {
+  font-size: 8px;
+  color: #3a3f4b;
+  text-align: right;
+  padding-right: 1px;
+  padding-bottom: 1px;
+  margin-top: auto;
+}
+
+.btn_action {
+  transition: transform 0.08s ease, background-color 0.08s ease;
+}
+
+.btn_action:active {
+  background-color: #323846;
+  transform: scale(0.94);
+}
+
+.kn_key--confirm:active {
+  background-color: #178a49;
+}
+
+/* Light mode — base rules above stay dark; these "--light" siblings are
+   appended (never swapped in) by withTheme() in src/index.ts. */
+
+.Page--light {
+  background-color: #f4f5f7;
+}
+
+.HeaderButton--light {
+  background-color: rgba(15, 23, 42, 0.06);
+}
+
+.CountryChip--light {
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+}
+
+.CountryChip-code--light {
+  color: #111827;
+}
+
+.TextNumber--light {
+  color: #111827;
+}
+
+.NumberHint--light {
+  color: #b0b7c3;
+}
+
+.DigitCount--light {
+  color: #b0b7c3;
+}
+
+.DigitCount--ready--light {
+  color: #16a34a;
+}
+
+.btn_x--light {
+  background-color: rgba(15, 23, 42, 0.08);
+}
+
+.kn--light {
+  background-color: #e8eaef;
+}
+
+.kn_key--light {
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+}
+
+.kn_key--ghost--light {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.kn_key--confirm--light {
+  background-color: #22c55e;
+  box-shadow: none;
+}
+
+.kn_key--confirmOff--light {
+  background-color: #e5e7eb;
+  box-shadow: none;
+}
+
+.kn_digit--light {
+  color: #111827;
+}
+
+.VersionLabel--light {
+  color: #c4c9d4;
+}
+
+.btn_action--light:active {
+  background-color: #eef0f4;
+}
+
+.kn_key--confirm--light:active {
+  background-color: #16a34a;
+}
