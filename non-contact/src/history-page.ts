@@ -27,7 +27,7 @@ function openEntry(entry: HistoryEntry) {
 
 function HistoryRow(entry: HistoryEntry) {
   const Flag = FLAGS[entry.isoCode];
-  return m("view", { class: withTheme("HistoryRow"), key: entry.id }, [
+  return m("view", { class: withTheme("HistoryRow") }, [
     m(
       "view",
       {
@@ -115,12 +115,14 @@ export const HistoryPage: m.Component = {
             ),
           ])
         : m(
-            "scroll-view",
+            "list",
             {
               class: withTheme("HistoryList"),
               "scroll-orientation": "vertical",
+              "list-type": "single",
+              "span-count": 1,
             },
-            entries.map((entry) => HistoryRow(entry)),
+            entries.map((entry) => m("list-item", { key: entry.id, "item-key": entry.id }, HistoryRow(entry))),
           ),
     ]);
   },

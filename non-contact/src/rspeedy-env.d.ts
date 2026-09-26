@@ -13,5 +13,10 @@ declare module "@lynx-js/types" {
     NonContactIntentModule?: {
       openWhatsApp(phone: string): void;
     };
+    // NonContactNavModule.kt — enables MainActivity's back callback while
+    // the in-app history can go back (mithril-lynx route.listenBackButton).
+    NonContactNavModule?: {
+      setCanGoBack(canGoBack: boolean): void;
+    };
   }
 }

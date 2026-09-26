@@ -67,6 +67,13 @@ route("/", {
 	"/history": HistoryHost,
 });
 
+// Android back button: MainActivity forwards it as the "mithrilLynx:back"
+// global event while NonContactNavModule reports in-app history; at the
+// first screen its callback is off and back closes the app as before.
+route.listenBackButton({
+	onCanGoBackChange: (canGoBack) => NativeModules.NonContactNavModule?.setCanGoBack(canGoBack),
+});
+
 if (module.hot) {
 	module.hot.accept("./dialer.js", () => {
 		currentDialer = require("./dialer.js").Dialer;

@@ -55,7 +55,6 @@ function CountryRow(c: Country, selected: boolean, onPick: () => void) {
     "view",
     {
       class: withTheme(selected ? "CountryRow CountryRow--selected" : "CountryRow"),
-      key: c.isoCode,
       ontap: onPick,
     },
     [
@@ -106,6 +105,10 @@ export const CountriesPage: m.Component = {
           placeholder: "Buscar país o código…",
           maxlength: 64,
           "confirm-type": "search",
+          // Opening this screen means the user wants to change the country:
+          // ~90% of visits tapped the search box within a second. Focus it
+          // (and raise the keyboard) on arrival — once, on creation.
+          autofocus: true,
           "placeholder-color": state.theme === "light" ? "#9ca3af" : "#6b7280",
           color: state.theme === "light" ? "#111827" : "#f5f5f5",
           oninput: (e: { detail?: { value?: string } }) => {
@@ -126,13 +129,18 @@ export const CountriesPage: m.Component = {
             ),
           ])
         : m(
-            "scroll-view",
+            "list",
             {
               class: withTheme("CountryList"),
               "scroll-orientation": "vertical",
+              "list-type": "single",
+              "span-count": 1,
             },
+            // Native list: only the visible rows get native views, and the
+            // keyed diff makes search filtering a set of real inserts and
+            // removes instead of a full re-layout of ~250 rows.
             list.map((c) =>
-              CountryRow(c, c.isoCode === selected.isoCode, () => {
+              m("list-item", { key: c.isoCode, "item-key": c.isoCode }, CountryRow(c, c.isoCode === selected.isoCode, () => {
                 // Second tap on the highlighted row confirms (scroll-view can
                 // steal touches from the footer on some devices).
                 if (local.draft.isoCode === c.isoCode) {
@@ -141,7 +149,7 @@ export const CountriesPage: m.Component = {
                 }
                 local.draft = c;
                 redraw();
-              }),
+              })),
             ),
           ),
 

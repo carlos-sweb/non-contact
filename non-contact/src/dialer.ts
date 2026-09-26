@@ -260,7 +260,7 @@ export const Dialer: m.Component = {
           ...KEYPAD_ROWS.map((row) =>
             m("view", { class: withTheme("kn_row") }, row.map(renderKey)),
           ),
-          m("text", { class: withTheme("VersionLabel") }, "v1.0"),
+          m("text", { class: withTheme("VersionLabel") }, "v1.1.0"),
         ],
       ),
     ]);

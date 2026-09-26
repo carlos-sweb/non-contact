@@ -1,6 +1,6 @@
 {
   "name": "non-contact",
-  "version": "0.0.1",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -16,7 +16,7 @@
   "dependencies": {
     "circle-flags-mithril": "^1.1.2",
     "lucide-mithril": "^1.1.2",
-    "mithril-lynx": "latest",
+    "mithril-lynx": "3.0.0",
     "mithril-runtime": "^1.1.0"
   },
   "devDependencies": {

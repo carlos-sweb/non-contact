@@ -7,9 +7,8 @@
       "dependencies": {
         "circle-flags-mithril": "^1.1.2",
         "lucide-mithril": "^1.1.2",
-        "mithril-lynx": "latest",
+        "mithril-lynx": "3.0.0",
         "mithril-runtime": "^1.1.0",
-        "pp-is": "^2.1.0",
       },
       "devDependencies": {
         "@lynx-js/config-rsbuild-plugin": "^0.2.0",
@@ -607,7 +606,7 @@
 
     "mithril": ["mithril@2.3.8", "", {}, "sha512-za/Yo7qXEckjm5syrSfaaI9Utf4tCUT3T1IOIYqH6Lrj7G0OZuYYLAY9SV4ygoaAf0+CNqU92MBt+7pmo53JVQ=="],
 
-    "mithril-lynx": ["mithril-lynx@2.6.0", "", { "dependencies": { "@lynx-js/runtime-wrapper-webpack-plugin": "^0.2.4", "@lynx-js/template-webpack-plugin": "^0.16.0" }, "peerDependencies": { "@lynx-js/rspeedy": "^0.17.0", "@lynx-js/types": "4.1.0", "mithril-runtime": "^1.1.0" } }, "sha512-zr7+SfVzR9gLLNh2kOiHknwc9WQikET7OPD2BUWZLo8EWuXq2VpkyfquKdY7pehVvX2msCG9KZRROv94zw2c3Q=="],
+    "mithril-lynx": ["mithril-lynx@3.0.0", "", { "dependencies": { "@lynx-js/runtime-wrapper-webpack-plugin": "^0.2.4", "@lynx-js/template-webpack-plugin": "^0.16.0" }, "peerDependencies": { "@lynx-js/rspeedy": "^0.17.0", "@lynx-js/types": "4.1.0", "mithril-runtime": "^1.1.0" } }, "sha512-oo0FlsLBWfZ8sG1CkxbCr5oLsdtqTFUovWK/voa2sPynsZ2NDXOD5KDWXHsgBNqysIvn4Vp2rTY0Q8qF4SMcCQ=="],
 
     "mithril-runtime": ["mithril-runtime@1.1.0", "", {}, "sha512-0+ymol3sR42Bd5PH1h8aXxIqBMFGvCwZYURj80iLB3SD18gK4ubzprdjY7mKd/TQkqDCGRtnMgOGFd/TL+Btog=="],
 
@@ -704,8 +703,6 @@
     "postcss-unique-selectors": ["postcss-unique-selectors@7.0.7", "", { "dependencies": { "postcss-selector-parser": "^7.1.1" }, "peerDependencies": { "postcss": "^8.5.13" } }, "sha512-d+sCkaRnSefghOUdH8CMJZV9yUQhj2ojpe8Nw/lA+LV1UOfeleGkLTl6XdCFFSai9UJ+DJPb69FFuqthXYsY8w=="],
 
     "postcss-value-parser": ["postcss-value-parser@4.2.0", "", {}, "sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ=="],
-
-    "pp-is": ["pp-is@2.1.0", "", {}, "sha512-umEqvXiJuW8RWlFawVs2t6wZq3U4XC1qkzkaRRJFxIJ1DtwzGaWLOsU2N7yioqjRt5RK+js1giH08Q5S6hSHJg=="],
 
     "punycode.js": ["punycode.js@2.3.1", "", {}, "sha512-uxFIHU0YlHYhDQtV4R9J6a52SLx28BCjT+4ieh7IGbgwVJWO+km431c4yRlREUAsAmt/uMjQUyQHNEPf0M39CA=="],
 
