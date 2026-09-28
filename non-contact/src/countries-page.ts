@@ -20,14 +20,12 @@ const ROW_FLAG_SIZE = 36;
 
 type LocalState = {
   query: string;
-  draft: Country;
   enterDone: boolean;
 };
 
 function createLocal(): LocalState {
   return {
     query: "",
-    draft: state.country,
     enterDone: false,
   };
 }
@@ -44,7 +42,7 @@ function filtered(query: string): Country[] {
   });
 }
 
-function confirmCountry(country: Country) {
+function pickCountry(country: Country) {
   selectCountry(country, FLAGS[country.isoCode]);
   route.back();
 }
@@ -80,7 +78,7 @@ export const CountriesPage: m.Component = {
   view(vnode) {
     const local = (vnode.state as { local: LocalState }).local;
     const list = filtered(local.query);
-    const selected = local.draft;
+    const selectedIso = state.country.isoCode;
     const hasQuery = local.query.trim().length > 0;
 
     return m("view", { class: pageClass("Page Page--countries", local.enterDone) }, [
@@ -109,7 +107,7 @@ export const CountriesPage: m.Component = {
           // ~90% of visits tapped the search box within a second. Focus it
           // (and raise the keyboard) on arrival — once, on creation.
           autofocus: true,
-          "placeholder-color": state.theme === "light" ? "#9ca3af" : "#6b7280",
+          "placeholder-color": state.theme === "light" ? "#6b7280" : "#9ca3af",
           color: state.theme === "light" ? "#111827" : "#f5f5f5",
           oninput: (e: { detail?: { value?: string } }) => {
             local.query = e.detail?.value ?? "";
@@ -140,44 +138,13 @@ export const CountriesPage: m.Component = {
             // keyed diff makes search filtering a set of real inserts and
             // removes instead of a full re-layout of ~250 rows.
             list.map((c) =>
-              m("list-item", { key: c.isoCode, "item-key": c.isoCode }, CountryRow(c, c.isoCode === selected.isoCode, () => {
-                // Second tap on the highlighted row confirms (scroll-view can
-                // steal touches from the footer on some devices).
-                if (local.draft.isoCode === c.isoCode) {
-                  confirmCountry(c);
-                  return;
-                }
-                local.draft = c;
-                redraw();
-              })),
+              m(
+                "list-item",
+                { key: c.isoCode, "item-key": c.isoCode },
+                CountryRow(c, c.isoCode === selectedIso, () => pickCountry(c)),
+              ),
             ),
           ),
-
-      m("view", { class: withTheme("CountriesFooter") }, [
-        m(
-          "view",
-          {
-            class: withTheme(
-              selected.isoCode === state.country.isoCode
-                ? "SelectButton SelectButton--muted"
-                : "SelectButton",
-            ),
-            // Bind on both the chip and the label — scroll-view hit-testing
-            // on some Android devices swallows taps that only land on text.
-            ontap: () => confirmCountry(selected),
-          },
-          [
-            m(
-              "text",
-              {
-                class: withTheme("SelectButton-label"),
-                ontap: () => confirmCountry(selected),
-              },
-              `Seleccionar ${selected.name} (${selected.dialCode})`,
-            ),
-          ],
-        ),
-      ]),
     ]);
   },
 };
