@@ -10,4 +10,4 @@ Barra de estado y barra de navegación del sistema recortadas.
 | `light/history.png` / `dark/history.png` | Historial (vacío en este dispositivo) |
 | `light/scanner.png` / `dark/scanner.png` | Escáner QR nativo |
 
-**Nota escáner:** `adb screencap` no captura el preview de cámara (`PreviewView` / SurfaceView): el marco, la X y el texto “Apunta al código QR” sí son reales; el área del preview sale negra. Las dos carpetas de tema comparten la misma captura porque el escáner es una Activity nativa fuera del tema Lynx.
+**Nota escáner:** `adb screencap` no captura el preview de cámara (`PreviewView` / SurfaceView). La UI del escáner (marco, X, “Apunta al código QR”) es real; el área del preview es una composición ilustrativa: cartel “Se perdió mi perrito” con QR de ejemplo (`+56912345678`). Light/dark comparten la misma imagen (Activity nativa, sin tema Lynx).
