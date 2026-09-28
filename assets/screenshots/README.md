@@ -1,6 +1,7 @@
 # Screenshots
 
 Capturas reales desde un Samsung SM-A075M con non-contact **1.1.1**.
+Barra de estado y barra de navegación del sistema recortadas.
 
 | Archivo | Pantalla |
 |---|---|
