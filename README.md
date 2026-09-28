@@ -17,16 +17,12 @@ Abre un chat de WhatsApp con un número **sin agregarlo a tu agenda**. Ideal par
 
 ## Capturas
 
-> Las rutas ya están listas. Cuando tengas PNGs reales del dispositivo, suéltalos en `assets/screenshots/`. Hasta entonces, GitHub mostrará el alt text.
-
 | Modo claro | Modo oscuro |
 |---|---|
 | ![Dialer — modo claro](assets/screenshots/light/dialer.png) | ![Dialer — modo oscuro](assets/screenshots/dark/dialer.png) |
 | ![País / código — claro](assets/screenshots/light/countries.png) | ![País / código — oscuro](assets/screenshots/dark/countries.png) |
 | ![Historial — claro](assets/screenshots/light/history.png) | ![Historial — oscuro](assets/screenshots/dark/history.png) |
 | ![Escáner QR — claro](assets/screenshots/light/scanner.png) | ![Escáner QR — oscuro](assets/screenshots/dark/scanner.png) |
-
-**Qué capturar (checklist):** dialer con número de ejemplo, selector de país con buscador, historial, escáner QR, cada una en tema claro y oscuro. Ver [Prompt para generar capturas reales](#prompt-para-generar-capturas-reales) al final.
 
 ---
 
@@ -168,30 +164,3 @@ Si tienes una idea concreta, ábrela como issue.
 ## English quick summary
 
 **non-contact** is a free Android APK that opens a WhatsApp chat from a phone number **without saving a contact**. Type the national number (default country Chile `+56`), confirm with ✓, or scan a phone-only QR. Keeps an in-app history (up to 50) and light/dark theme. Download: [latest `app-release-1.1.1.apk`](https://github.com/carlos-sweb/non-contact/releases/latest/download/app-release-1.1.1.apk).
-
----
-
-## Prompt para generar capturas reales
-
-Úsalo en el teléfono (o emulador) con el APK instalado:
-
-```text
-Objetivo: capturas reales de non-contact para el README de GitHub.
-Dispositivo: Android, barra de estado limpia si puedes (sin notificaciones sensibles).
-Número de ejemplo en dialer: 912345678 con código +56 visible (Chile).
-NO inventes UI: captura la app tal cual (confirmación = icono ✓, no un botón de texto).
-
-Archivos a guardar (PNG, ~1080×1920 o similar portrait):
-
-Modo CLARO:
-1) assets/screenshots/light/dialer.png     — dialer con el número de ejemplo, chip +56
-2) assets/screenshots/light/countries.png  — lista País/código con buscador visible
-3) assets/screenshots/light/history.png    — historial (con al menos 1–2 entradas de prueba)
-4) assets/screenshots/light/scanner.png    — pantalla del escáner QR (permiso cámara concedido)
-
-Modo OSCURO: repetir 1–4 en
-assets/screenshots/dark/{dialer,countries,history,scanner}.png
-
-Orden sugerido: tema claro → 4 pantallas → cambiar a oscuro → mismas 4.
-Evitar datos personales reales; usa números de prueba.
-```
