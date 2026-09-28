@@ -68,15 +68,6 @@ android {
     }
 }
 
-// APK filename includes the version, e.g. app-release.1.1.1.apk
-android.applicationVariants.configureEach {
-    val ver = versionName
-    outputs.configureEach {
-        (this as com.android.build.gradle.internal.api.BaseVariantOutputImpl).outputFileName =
-            "app-${buildType.name}.${ver}.apk"
-    }
-}
-
 dependencies {
     // The core artifact — LynxView, LynxViewBuilder, the layout engine, etc.
     implementation("org.lynxsdk.lynx:lynx:4.1.0")

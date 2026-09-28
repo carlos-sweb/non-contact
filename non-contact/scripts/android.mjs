@@ -91,6 +91,14 @@ function detectPackageManager() {
 	return "npm";
 }
 
+/** Read versionName from the sibling Android app's build.gradle.kts. */
+function readAndroidVersionName() {
+	const gradle = path.join(ANDROID_DIR, "app", "build.gradle.kts");
+	if (!fs.existsSync(gradle)) return null;
+	const m = fs.readFileSync(gradle, "utf8").match(/versionName\s*=\s*"([^"]+)"/);
+	return m?.[1] ?? null;
+}
+
 function gradlew() {
 	return process.platform === "win32" ? "gradlew.bat" : "./gradlew";
 }
@@ -241,8 +249,19 @@ function main() {
 	if (flags.has("--release")) {
 		runGradle("assembleRelease", extraGradleArgs);
 		const apkDir = path.join(ANDROID_DIR, "app", "build", "outputs", "apk", "release");
-		for (const apk of fs.existsSync(apkDir) ? fs.readdirSync(apkDir).filter((f) => f.endsWith(".apk")) : []) {
-			console.log(`\n  ✔ APK: ${path.relative(projectRoot, path.join(apkDir, apk))}`);
+		const stock = path.join(apkDir, "app-release.apk");
+		// Rename a copy only — do not touch Gradle packaging/signing.
+		// Use hyphens (app-release-1.1.1.apk): names like app-release.1.1.1.apk
+		// confuse some Android file managers when sideloading.
+		const versionName = readAndroidVersionName();
+		if (fs.existsSync(stock) && versionName) {
+			const versioned = path.join(apkDir, `app-release-${versionName}.apk`);
+			fs.copyFileSync(stock, versioned);
+			console.log(`\n  ✔ APK: ${path.relative(projectRoot, versioned)}`);
+		} else {
+			for (const apk of fs.existsSync(apkDir) ? fs.readdirSync(apkDir).filter((f) => f.endsWith(".apk")) : []) {
+				console.log(`\n  ✔ APK: ${path.relative(projectRoot, path.join(apkDir, apk))}`);
+			}
 		}
 	} else if (flags.has("--apk") || process.env.CI) {
 		runGradle("assembleDebug", extraGradleArgs);

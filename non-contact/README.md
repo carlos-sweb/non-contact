@@ -2,7 +2,7 @@
 
 App Android para **abrir un chat de WhatsApp sin guardar el contacto**.
 
-- Producto y descarga: [README del repo](https://github.com/carlos-sweb/non-contact#readme) · [APK latest](https://github.com/carlos-sweb/non-contact/releases/latest/download/app-release.1.1.1.apk)
+- Producto y descarga: [README del repo](https://github.com/carlos-sweb/non-contact#readme) · [APK latest](https://github.com/carlos-sweb/non-contact/releases/latest/download/app-release-1.1.1.apk)
 - Stack: [Lynx](https://lynxjs.org) + [Mithril](https://mithril.js.org) vía [`mithril-lynx`](https://github.com/carlos-sweb/mithril-lynx)
 
 ## Desarrollo
