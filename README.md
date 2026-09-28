@@ -5,12 +5,12 @@
 Abre un chat de WhatsApp con un número **sin agregarlo a tu agenda**. Ideal para pedidos, ventas, soporte, delivery y trámites: el número entra, el chat se abre, tu lista de contactos se queda limpia.
 
 [![Android](https://img.shields.io/badge/Android-APK-3DDC84?logo=android&logoColor=white)](https://github.com/carlos-sweb/non-contact/releases/latest)
-[![Descarga](https://img.shields.io/badge/Descarga-APK%20gratis-0A66C2)](https://github.com/carlos-sweb/non-contact/releases/latest/download/app-release.apk)
-[![Gratis](https://img.shields.io/badge/Precio-Gratis-brightgreen)](https://github.com/carlos-sweb/non-contact/releases/latest/download/app-release.apk)
+[![Descarga](https://img.shields.io/badge/Descarga-APK%20gratis-0A66C2)](https://github.com/carlos-sweb/non-contact/releases/latest/download/app-release.1.1.1.apk)
+[![Gratis](https://img.shields.io/badge/Precio-Gratis-brightgreen)](https://github.com/carlos-sweb/non-contact/releases/latest/download/app-release.1.1.1.apk)
 [![Tema](https://img.shields.io/badge/Tema-Claro%20%2F%20Oscuro-111827)](#características)
 
 > **Descarga el APK en Releases**  
-> → [app-release.apk (última versión)](https://github.com/carlos-sweb/non-contact/releases/latest/download/app-release.apk)  
+> → [app-release.1.1.1.apk (última versión)](https://github.com/carlos-sweb/non-contact/releases/latest/download/app-release.1.1.1.apk)  
 > También en la página de [Releases](https://github.com/carlos-sweb/non-contact/releases/latest).
 
 ---
@@ -77,7 +77,7 @@ Si buscas *abrir chat de WhatsApp sin guardar contacto* o un *marcador rápido W
 ## Instalación / descarga
 
 1. Descarga el APK:  
-   [https://github.com/carlos-sweb/non-contact/releases/latest/download/app-release.apk](https://github.com/carlos-sweb/non-contact/releases/latest/download/app-release.apk)
+   [https://github.com/carlos-sweb/non-contact/releases/latest/download/app-release.1.1.1.apk](https://github.com/carlos-sweb/non-contact/releases/latest/download/app-release.1.1.1.apk)
 2. En Android, permite instalar desde esa fuente (ajustes de “instalar apps desconocidas” / similares, según tu versión).
 3. Abre el APK e instala.
 4. Ten **WhatsApp** instalado: non-contact le pasa el número; el chat lo abre WhatsApp.
@@ -157,7 +157,7 @@ Si tienes una idea concreta, ábrela como issue.
 
 ## Empieza en un minuto
 
-1. [Descarga el APK](https://github.com/carlos-sweb/non-contact/releases/latest/download/app-release.apk)  
+1. [Descarga el APK](https://github.com/carlos-sweb/non-contact/releases/latest/download/app-release.1.1.1.apk)  
 2. Dale una **estrella** al repo si te sirve  
 3. **Comparte** el link con quien vive de números temporales  
 
@@ -167,7 +167,7 @@ Si tienes una idea concreta, ábrela como issue.
 
 ## English quick summary
 
-**non-contact** is a free Android APK that opens a WhatsApp chat from a phone number **without saving a contact**. Type the national number (default country Chile `+56`), confirm with ✓, or scan a phone-only QR. Keeps an in-app history (up to 50) and light/dark theme. Download: [latest `app-release.apk`](https://github.com/carlos-sweb/non-contact/releases/latest/download/app-release.apk).
+**non-contact** is a free Android APK that opens a WhatsApp chat from a phone number **without saving a contact**. Type the national number (default country Chile `+56`), confirm with ✓, or scan a phone-only QR. Keeps an in-app history (up to 50) and light/dark theme. Download: [latest `app-release.1.1.1.apk`](https://github.com/carlos-sweb/non-contact/releases/latest/download/app-release.1.1.1.apk).
 
 ---
 
