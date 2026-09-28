@@ -1,37 +1,31 @@
-# non-contact
+# non-contact (UI)
 
-A [Lynx](https://lynxjs.org) app built with [Mithril.js](https://mithril.js.org), via [`mithril-lynx`](https://github.com/carlos-sweb/mithril-lynx).
+App Android para **abrir un chat de WhatsApp sin guardar el contacto**.
 
-## Getting started
+- Producto y descarga: [README del repo](https://github.com/carlos-sweb/non-contact#readme) · [APK latest](https://github.com/carlos-sweb/non-contact/releases/latest/download/app-release.apk)
+- Stack: [Lynx](https://lynxjs.org) + [Mithril](https://mithril.js.org) vía [`mithril-lynx`](https://github.com/carlos-sweb/mithril-lynx)
+
+## Desarrollo
 
 ```bash
 npm install
-npm run dev      # scan the printed QR code with LynxExplorer, or open it in Lynx Go
-npm run build    # production bundle, in dist/
+npm run dev      # QR con LynxExplorer / Lynx Go
+npm run build    # bundle en dist/
 ```
 
-## Learn more
+- `src/main-thread.ts` — runtime main-thread (`setupRenderer()`).
+- `src/background.ts` — montaje de la app (`renderApp()`), rutas y vistas.
+- Docs del framework: [mithril-lynx README](https://github.com/carlos-sweb/mithril-lynx#readme).
 
-- `src/main-thread.ts` starts the main-thread patch-replay runtime (`setupRenderer()`) — mithril-lynx has exactly one rendering mode, so no app code lives here.
-- `src/background.ts` is where the app actually mounts (`renderApp()`), running the real Mithril view tree in the background thread.
-- Everything about the framework — the three reload modes, routing, networking — is documented in [`mithril-lynx`'s own README](https://github.com/carlos-sweb/mithril-lynx#readme).
+## Android (APK)
 
-## Android (native APK)
-
-The Android host lives in `../non-contact-android/` and packages the bundle this project produces.
+El host nativo está en `../non-contact-android/` (`com.example.noncontact`).
 
 ```bash
-npm run android          # build the bundle, copy it to assets, install and launch on the device
-npm run android:apk      # build the debug APK only
-npm run android:sync     # bundle -> assets only, no Gradle
-
-# Signed release APK (generate the keystore once):
-KEYSTORE_PASSWORD='...' npm run android:keystore
-npm run android:release
+npm run android          # build + sync + install + launch
+npm run android:apk      # assembleDebug
+npm run android:sync     # bundle → assets
+npm run android:release  # assembleRelease (con keystore.properties)
 ```
 
-- Application ID: `com.example.noncontact`
-- Application class: `NonContact` · Activity: `MainActivity`
-- Font `JetBrains Mono` via `lynx.addFont()`, split by build mode (`import.meta.env.DEV`):
-  - **dev / Lynx Go**: `require()` the `.ttf` → inlined `data:` URI (otherwise Lynx Go has nothing to resolve).
-  - **production / Android APK**: `asset:///fonts/…` resolved by `AssetFontFaceLoader` from the host's `assets/fonts/` (kept in sync by `npm run android`). Avoids baking a ~60 kB base64 font into the bundle — that was what made the APK slow again after #9431's `NoopGenericResourceFetcher` fix.
+Fuente JetBrains Mono: en **dev** (Lynx Go) se inlinea como `data:` URI; en **prod** (APK) se resuelve con `asset:///fonts/…` vía `AssetFontFaceLoader` en el host.
